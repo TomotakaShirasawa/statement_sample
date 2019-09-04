@@ -1,12 +1,12 @@
-require 'sales'
+require 'net_income'
 
 # 損益計算書(Profit and Loss statement)クラス
 class PL
-  # 売上高
-  # @return [Sales]
-  attr_reader :sales
+  # 純利益
+  # @return [NetIncome]
+  attr_reader :net_income
 
   def initialize(params)
-    @sales = params.fetch(:sales)
+    @net_income = params.fetch(:net_income)
   end
 end
