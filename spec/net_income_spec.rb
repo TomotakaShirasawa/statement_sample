@@ -12,6 +12,10 @@ RSpec.describe NetIncome do
       eps = @net_income.eps(@outstanding_shares)
       expect(eps.to_d).to be_within(0.01).of(1282.13)
     end
+
+    context '発行済み株式数オブジェクト以外の場合' do
+      it { expect { @net_income.eps(BigDecimal('1234')) }.to raise_error(TypeError) }
+    end
   end
 
   describe '想定外の値' do
