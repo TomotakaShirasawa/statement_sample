@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe OutstandingShares do
-  it { expect { described_class.new(0) }.to raise_error(TypeError) }
+  describe '想定外の値' do
+    it { expect { described_class.new(0) }.to raise_error(TypeError) }
+  end
 end
