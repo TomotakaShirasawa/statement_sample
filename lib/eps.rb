@@ -12,6 +12,6 @@ class EPS < NumericalValue
   def per(stock_price)
     raise TypeError, 'StockPriceを指定してください' unless stock_price.kind_of?(StockPrice)
 
-    PER.new(stock_price.to_d.div(to_d))
+    PER.new(stock_price.to_d.div(to_d, 10))
   end
 end
